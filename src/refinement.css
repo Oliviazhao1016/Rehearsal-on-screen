@@ -1,0 +1,306 @@
+:root{
+  --color-border:#d4af37;
+  --color-border-soft:rgba(212,175,55,.56);
+  --color-border-faint:rgba(212,175,55,.24);
+}
+
+/* Use the reference art's geometry, drawn at the size of each interface area. */
+button,input,select,textarea,.setup-form,.stage-option,.custom-stage-art,
+.settings-modal,.mark-edit,.toast,.preset-cards button,.preset-stage,
+.ticket-preview,.position-thumb,.new-position-wrap,.mode-switch,
+.object-row,.inspector-marker,.coordinate-box,.color-choices button,
+.music-clip,.transition-bar,.movement-mini-track,.movement-bar,
+.path-toolbox,.path-toolbox button,.stage-coordinate-tooltip,
+.stage-exit-overlay,.brand-symbol,.stage-option img,.preview-stage,.preview-prop,.path-anchor.corner{border-radius:0!important}
+.stage-prop:is(.circle,.ellipse),.ticket-actor,.preview-actor,.status-light,
+.color-choices img,.stage-actor img{border-radius:50%!important}
+.editor-page button,.create-page button,.play-library button{
+  transition:background-color .4s ease,border-color .4s ease,color .4s ease,opacity .4s ease,box-shadow .4s ease,transform .56s cubic-bezier(.2,.75,.18,1);
+}
+.editor-page button:disabled,.play-library button:disabled{opacity:.42;cursor:not-allowed}
+.stage-option.chosen{cursor:default}.stage-option.chosen:hover{background:#25211d;border-color:#AA865683}
+.editor-page :is(.mode-switch,.canvas-tools button,.path-toolbox button,.next-button,.play-button,.strip-scroll-arrow,.timeline-scroll-arrow,.movement-draw,.primary-button){clip-path:none!important;box-shadow:none}
+.editor-page :is(.mode-switch,.canvas-tools button,.path-toolbox button,.next-button,.play-button,.strip-scroll-arrow,.timeline-scroll-arrow,.movement-draw,.settings-modal){border:1px solid var(--color-border-soft)}
+.editor-page .next-button{width:128px;min-width:128px;flex:none;white-space:nowrap}
+.editor-page :is(.position-thumb,.object-row.active,.inspector-marker,.coordinate-box,.music-clip,.transition-bar,.movement-bar){border-color:var(--color-border-faint)}
+.editor-page :is(.position-thumb.active,.object-row.active,.music-clip:hover,.transition-bar.active){border-color:var(--color-border-soft)}
+.editor-page button svg{width:17px;height:17px;stroke-width:1.8;flex:none}
+.editor-page :is(.object-row-action,.sidebar-section-title button,.add-prop-menu button){min-width:25px;min-height:28px}
+.editor-page :is(.object-row-action,.sidebar-section-title button,.add-prop-menu button) svg{width:17px;height:17px}
+
+.play-library{
+  height:100dvh;min-height:650px;display:flex;flex-direction:column;
+  overflow:hidden;background-image:linear-gradient(90deg,#17151382,#17151347 48%,#171513a1),linear-gradient(0deg,#171513b8,transparent 58%),var(--playbill-background);
+}
+.play-library-header{flex:none;width:100%;max-width:none;padding:clamp(24px,4.4vh,46px) 20px 0}
+.play-library-header h1{font-size:clamp(58px,6.6vw,94px);line-height:1.08;margin:0}
+.play-library-header p{font-size:clamp(14px,1.25vw,18px);color:var(--color-text);margin:13px 0 0;letter-spacing:.14em;text-shadow:0 2px 8px #000}
+.play-library-divider{
+  position:relative;display:block;width:min(390px,68vw);height:1px;
+  margin:26px auto 0;background:var(--color-border);filter:none;
+}
+.play-library-divider:after{
+  content:"";position:absolute;width:9px;height:9px;left:50%;top:50%;
+  background:#171513;border:1px solid var(--color-border);transform:translate(-50%,-50%) rotate(45deg);
+}
+.ticket-shelf{flex:1;min-height:0;width:100%;max-width:none;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:0;padding:12px 16px 28px}
+.ticket-scene{position:relative;flex:none;width:min(1050px,100%);height:min(54vh,520px);min-height:380px;margin:0;transform:none}
+.ticket-stack{position:absolute;inset:0;width:auto}
+.ticket-card{
+  position:absolute;top:5%;left:15%;width:min(31.68vh,305px);min-width:223px;height:88%;aspect-ratio:2 / 3;padding:0;
+  transform:translateX(calc(var(--ticket-index) * 7px)) rotate(calc(var(--ticket-index) * 1deg));
+  transform-origin:20% 80%;
+}
+.ticket-scene:hover .ticket-card,.ticket-scene.is-open .ticket-card,.ticket-scene:focus-within .ticket-card{
+  transform:translateX(calc(275px + var(--ticket-index) * 280px)) rotate(-2deg);
+}
+.ticket-card:hover,.ticket-card:focus-visible{
+  transform:translateX(calc(275px + var(--ticket-index) * 280px)) rotate(0deg) translateY(-8px)!important;
+}
+.ticket-folder{left:7%;top:0;width:auto;height:100%;aspect-ratio:2 / 3;filter:drop-shadow(12px 12px 14px #06040499)}
+.ticket-content{position:absolute;inset:0;display:block;pointer-events:none;color:#573027}
+.ticket-overline{
+  position:absolute;top:20%;left:18%;right:18%;margin:0;text-align:center;
+  color:#78372d;font-size:clamp(8px,.86vw,11px);font-weight:500;
+  letter-spacing:.07em;white-space:nowrap;
+}
+.ticket-body{
+  position:absolute;left:19%;right:19%;top:29%;height:39%;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;gap:8px;
+}
+.ticket-content strong{display:block;font-size:clamp(18px,2vw,25px);line-height:1.2;max-height:2.4em}
+.ticket-detail{font-size:clamp(11px,1.15vw,14px);line-height:1.4;margin:0}
+.ticket-preview{flex:none;width:70%;height:min(7vh,52px);margin:3px 0;background:#f5e7d2;border-color:#a36e52}
+.ticket-action{
+  position:absolute;left:23%;right:23%;top:79%;height:11%;
+  display:flex;justify-content:center;align-items:center;gap:7px;
+  margin:0;font-size:clamp(12px,1.2vw,15px);color:var(--color-accent);
+}
+.ticket-plus,.ticket-card.blank .ticket-plus{
+  width:52px;height:52px;margin:0 0 5px;border:1px solid var(--color-support);
+  display:grid;place-items:center;transform:rotate(45deg);border-radius:0;
+}
+.ticket-plus svg{transform:rotate(-45deg);width:27px;height:27px}
+.ticket-card.blank .ticket-detail{font-size:clamp(10px,1.1vw,13px);margin:0}
+.ticket-pages{display:flex;align-items:center;justify-content:center;gap:18px;flex:none;height:45px;margin-bottom:18px;color:var(--color-text)}
+.ticket-pages button{width:38px;height:32px;border:1px solid var(--color-border-soft);background:#171513a6;color:var(--color-text);font-size:20px;line-height:1}
+.ticket-pages button:hover:not(:disabled){background:#8F302D}
+
+/* Ticket copy stays within the printed safe area; its controls occupy the
+   detachable lower stub rather than competing with the cast preview. */
+.ticket-card{border:0;background:transparent;cursor:default;overflow:visible}
+.ticket-open-surface{position:absolute;z-index:1;inset:0;border:0;background:transparent;padding:0;color:inherit;cursor:pointer}
+.ticket-open-surface:focus-visible{outline:1px solid var(--color-support);outline-offset:4px}
+.ticket-overline{left:12%;right:12%;top:20%;font-size:clamp(6px,.62vw,8px);letter-spacing:.035em;overflow:hidden;text-overflow:clip}
+.ticket-body{left:14%;right:auto;width:72%;top:27%;height:41%;gap:4px;min-width:0;box-sizing:border-box;overflow:hidden}
+.ticket-card:not(.blank) .ticket-body{left:28%;width:44%;max-width:44%}
+.ticket-content strong{display:-webkit-box;flex:0 0 auto;width:100%;max-width:100%;min-width:0;box-sizing:border-box;font-size:clamp(13px,1.3vw,17px);line-height:1.12;max-height:2.4em;overflow:hidden;white-space:normal;word-break:break-all;overflow-wrap:anywhere;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.ticket-preview{width:74%;height:min(5.7vh,42px);margin:2px 0}
+.ticket-detail{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(9px,.82vw,11px);line-height:1.15}
+.ticket-controls{position:absolute;z-index:3;top:75%;left:16%;right:16%;display:flex;flex-direction:column;align-items:center;gap:1px}
+.ticket-controls .ticket-action,.ticket-delete{position:static;display:inline-flex;align-items:center;justify-content:center;gap:4px;width:100%;height:auto;margin:0;border:0;background:transparent;padding:1px 0;color:var(--color-accent);font-family:var(--font-ui);font-size:clamp(9px,.8vw,11px);line-height:1.2;white-space:nowrap;cursor:pointer}
+.ticket-delete{font-size:clamp(8px,.7vw,10px);color:#78372d}
+.ticket-delete:hover,.ticket-delete:focus-visible{color:var(--color-accent);text-decoration:underline;outline:none}
+.ticket-card.blank .ticket-action{top:79%}
+.ticket-card.is-deleting{pointer-events:none;animation:ticket-card-fade 760ms ease-in forwards}
+.ticket-card.is-deleting>img{clip-path:inset(0 0 27% 0)}
+.ticket-card.is-deleting:before{content:"";position:absolute;z-index:2;inset:0;background:var(--ticket-art) center/100% 100% no-repeat;clip-path:polygon(0 73%,100% 73%,100% 100%,0 100%);animation:ticket-bottom-tear 500ms 100ms cubic-bezier(.2,.72,.35,1) forwards}
+.ticket-card.is-deleting .ticket-controls{animation:ticket-bottom-tear 500ms 100ms cubic-bezier(.2,.72,.35,1) forwards}
+.ticket-tear-seam{position:absolute;z-index:4;left:8%;right:8%;top:73%;height:2px;opacity:0;background:repeating-linear-gradient(90deg,#573027 0 4px,transparent 4px 7px)}
+.ticket-card.is-deleting .ticket-tear-seam{animation:ticket-tear-seam 260ms 80ms ease-out forwards}
+@keyframes ticket-bottom-tear{from{transform:translateY(0) rotate(0);opacity:1}to{transform:translateY(46px) rotate(2deg);opacity:0}}
+@keyframes ticket-tear-seam{0%{opacity:0;transform:scaleX(.2)}100%{opacity:1;transform:scaleX(1)}}
+@keyframes ticket-card-fade{0%,54%{opacity:1}100%{opacity:0;filter:brightness(.65)}}
+
+/* Thin, responsive geometry replaces the imported picture frames. */
+.stage-outer{padding:10px}
+.stage-outer:before,.stage-outer:after{
+  content:"";position:absolute;z-index:13;pointer-events:none;background:none;filter:none;
+  border:1px solid var(--color-border-soft);border-radius:0;
+}
+.stage-outer:after{inset:4px}
+.stage-outer:before{inset:9px;border-color:var(--color-border-faint)}
+.stage-frame-corner{
+  position:absolute;z-index:14;width:22px;height:22px;pointer-events:none;
+  border-color:var(--color-border);border-style:solid;border-width:0;
+}
+.stage-frame-corner.top-left{top:4px;left:4px;border-top-width:1px;border-left-width:1px}
+.stage-frame-corner.top-right{top:4px;right:4px;border-top-width:1px;border-right-width:1px}
+.stage-frame-corner.bottom-left{bottom:4px;left:4px;border-bottom-width:1px;border-left-width:1px}
+.stage-frame-corner.bottom-right{bottom:4px;right:4px;border-bottom-width:1px;border-right-width:1px}
+.stage-frame-jewel{
+  position:absolute;z-index:14;left:50%;width:8px;height:8px;
+  background:var(--color-main);border:1px solid var(--color-border);transform:translateX(-50%) rotate(45deg);
+  pointer-events:none;
+}
+.stage-frame-jewel.top{top:0}.stage-frame-jewel.bottom{bottom:0}
+.stage-canvas{border:0;border-radius:0}
+.stage-canvas .side-wing{
+  position:absolute;z-index:3;top:0;bottom:0;width:7.5%;display:grid;place-items:center;
+  background:linear-gradient(90deg,rgba(87,20,26,.86),rgba(87,20,26,.46));
+  border-right:1px solid rgba(212,175,55,.28);pointer-events:none;
+}
+.stage-canvas .side-wing.right-wing{right:0;left:auto;transform:scaleX(-1)}
+.stage-canvas .side-wing span{transform:none;writing-mode:vertical-rl;letter-spacing:.34em;color:#e8d8bcad;font-size:12px;font-weight:600}
+.stage-canvas .side-wing.right-wing span{transform:scaleX(-1)}
+.stage-tick{background:var(--color-border-soft)}
+.position-strip:after,.timeline-heading:after,.sidebar-header:after,.canvas-bottom-bar:after{
+  left:50%;bottom:-1px;width:min(160px,50%);height:1px;transform:translateX(-50%);
+  background:var(--color-border-soft);border:0;opacity:1;
+}
+.position-strip:before,.timeline-heading:before,.sidebar-header:before,.canvas-bottom-bar:before{
+  content:"";position:absolute;z-index:3;bottom:-5px;left:50%;
+  width:7px;height:7px;border:1px solid var(--color-border-soft);
+  background:var(--color-main);transform:translateX(-50%) rotate(45deg);pointer-events:none;
+}
+.scene-name{min-height:30px;padding:4px 8px;border:1px solid transparent;color:var(--color-text)}
+.scene-name:hover,.scene-name:focus-visible{border-color:var(--color-border-soft)}
+.scene-name-input{width:160px;height:31px;padding:4px 7px;background:#211e1a;border:1px solid var(--color-border);color:var(--color-text)}
+.music-name-input{min-width:35px;width:100%;height:22px;padding:2px 4px;background:#211e1a;border:1px solid var(--color-border);color:var(--color-text);font:inherit}
+.music-clip{overflow:visible;z-index:5}.music-clip.menu-open{z-index:20}
+.music-clip>span{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.music-clip .music-menu-trigger{display:grid;place-items:center;width:18px;height:25px;min-width:18px;cursor:pointer}
+.music-clip-menu{position:absolute;top:calc(100% + 5px);z-index:25;display:flex;flex-direction:column;gap:2px;width:158px;padding:5px;background:#211e1a;border:1px solid var(--color-border);box-shadow:0 7px 16px #0008}
+.music-clip .music-clip-menu button{display:flex;align-items:center;gap:7px;width:100%;min-height:28px;padding:4px 6px;text-align:left;color:var(--color-text);font-size:12px;cursor:pointer}
+.music-clip .music-clip-menu button:hover{background:#8F302D}
+.color-choices{flex-wrap:wrap}
+.color-choices button{width:43px;height:43px;padding:4px}
+.color-choices img{width:32px;height:32px}
+.position-strip,.timeline-heading,.sidebar-header,.canvas-bottom-bar{border-color:var(--color-border-faint)}
+.stage-exit-overlay{background:#a8a6a485;backdrop-filter:blur(1px)}
+.editor-page .stage-ruler.left{left:-24px}.editor-page .stage-ruler.right{right:-24px}
+.path-toolbox{width:100%;box-sizing:border-box;flex-wrap:wrap;overflow:visible}
+.path-toolbox .path-done{margin-left:auto!important}
+
+/* Mark management lives beside the stage rather than in the global parameters dialog. */
+.sidebar-section{padding-top:13px;padding-bottom:6px}
+.sidebar-section-title{padding-bottom:7px}
+.sidebar-section-title .section-collapse{margin:0 1px 0 0!important;min-width:18px;min-height:22px;padding:0;color:var(--color-support)}
+.sidebar-section-title .section-collapse svg{width:14px;height:14px}
+.object-row{min-height:35px!important;padding:3px 5px!important;gap:4px!important}
+.object-row img{width:24px!important;height:24px!important}
+.object-row .object-row-action{height:22px;min-width:22px!important}
+.object-row .object-row-action svg{width:15px;height:15px}
+.marks-section{border-top:1px solid var(--color-border-faint);margin-top:5px}
+.mark-glyph{display:block;flex:none;width:22px;height:2px;box-shadow:0 0 0 1px #0005}
+.stage-mark-row small{font-size:9px}
+.stage-mark{height:13px;margin:0;padding:0;background:transparent;border-right:0;border-bottom:0;border-left:0;pointer-events:none;cursor:default}
+.stage-mark.is-editable{z-index:7;pointer-events:auto;cursor:grab}
+.stage-mark.is-editable:active{cursor:grabbing}
+.stage-mark.is-editable:hover,.stage-mark.selected{filter:brightness(1.45);box-shadow:0 0 0 1px var(--color-support)}
+.stage-mark.selected{z-index:8}
+.stage-mark span{pointer-events:none}
+.mark-inspector-preview{justify-content:flex-start}
+.mark-style-toggle{display:flex;align-items:center;gap:7px;margin:2px 0 17px;color:var(--color-text);font-size:12px}
+.mark-style-toggle input{accent-color:var(--color-support)}
+/* The canvas is a spatial overview: actor markers stay deliberately lighter than the stage grid. */
+.stage-canvas .stage-actor{width:25px;height:25px}
+.stage-canvas .stage-actor img{width:25px;height:25px}
+.stage-canvas .stage-actor strong{font-size:8px}
+.stage-canvas .stage-actor small{top:27px;font-size:10px}
+
+@media(max-width:900px){
+  .ticket-scene{width:min(620px,100%);height:min(53vh,480px)}
+  .ticket-folder{left:8%;width:auto}
+  .ticket-card{left:20%;width:min(31.1vh,281.6px);min-width:223px}
+  .ticket-scene:hover .ticket-card,.ticket-scene.is-open .ticket-card,.ticket-scene:focus-within .ticket-card{
+    transform:translateX(78%) rotate(-2deg);
+  }
+  .ticket-card:hover,.ticket-card:focus-visible{transform:translateX(78%) rotate(0deg) translateY(-8px)!important}
+}
+@media(max-width:560px){
+  .play-library{min-height:590px}
+  .play-library-header{padding-top:22px}
+  .play-library-header h1{font-size:58px}
+  .play-library-header p{font-size:13px;margin-top:9px}
+  .play-library-divider{margin-top:21px;width:62vw}
+  .ticket-shelf{padding:10px 8px 22px}
+  .ticket-scene{width:100%;min-height:330px;height:min(50vh,420px)}
+  .ticket-folder{left:2%;width:auto}
+  .ticket-card{left:17%;width:min(29.67vh,249.2px);min-width:196px;height:89%}
+  .ticket-scene:hover .ticket-card,.ticket-scene.is-open .ticket-card,.ticket-scene:focus-within .ticket-card{transform:translateX(68%) rotate(-2deg)}
+  .ticket-card:hover,.ticket-card:focus-visible{transform:translateX(68%) rotate(0deg) translateY(-6px)!important}
+  .ticket-content strong{font-size:17px}
+  .ticket-overline{top:21%;font-size:8px;letter-spacing:0}
+  .ticket-body{left:17%;right:auto;width:66%;top:30%;height:38%;gap:5px}
+  .ticket-detail{font-size:10px}
+  .ticket-preview{height:39px}
+  .ticket-action{font-size:11px;left:18%;right:18%}
+  .ticket-plus,.ticket-card.blank .ticket-plus{width:38px;height:38px}
+}
+@media(max-width:740px){
+  .path-toolbox{gap:4px;padding:5px 6px}
+  .path-toolbox>span{margin:0 2px;font-size:11px}
+  .path-toolbox button{font-size:11px;padding:4px 6px}
+  .path-toolbox .path-done{margin-left:0!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .editor-page button,.create-page button,.play-library button{transition:none}
+}
+
+/* Desktop workbench panels can be fitted to the user's screen without changing
+   the fixed stage ratio. The grab areas sit on top of existing dividers. */
+@media(min-width:801px){
+  .editor-main,.editor-main.left-collapsed,.editor-main.right-collapsed,.editor-main.left-collapsed.right-collapsed{
+    grid-template-columns:var(--left-panel-width,240px) minmax(360px,1fr) var(--right-panel-width,280px)!important;
+  }
+  .panel-resizer{
+    position:absolute;z-index:40;top:0;bottom:0;width:10px;
+    cursor:col-resize;touch-action:none;user-select:none;
+  }
+  .panel-resizer:after{
+    content:"";position:absolute;top:0;bottom:0;left:4px;width:1px;
+    background:#AA865600;transition:background 160ms ease,box-shadow 160ms ease;
+  }
+  .panel-resizer:hover:after,.panel-resizer:focus-visible:after{
+    background:var(--color-support);box-shadow:0 0 0 1px #AA865650;
+  }
+  .panel-resizer:focus-visible{outline:none}
+  .timeline-resizer{
+    position:relative;z-index:45;height:10px;margin:-5px 0;
+    cursor:row-resize;touch-action:none;user-select:none;
+  }
+  .timeline-resizer:after{
+    content:"";position:absolute;left:50%;top:4px;width:min(180px,24vw);height:1px;
+    transform:translateX(-50%);background:#AA865655;transition:background 160ms ease;
+  }
+  .timeline-resizer:hover:after,.timeline-resizer:focus-visible:after{background:var(--color-support)}
+  .timeline-resizer:focus-visible{outline:none}
+  .timeline-panel:not(.collapsed){min-height:160px}
+}
+@media(max-width:800px){
+  .panel-resizer,.timeline-resizer{display:none}
+}
+@media(max-width:560px){
+  .ticket-content strong{font-size:13px}
+  .ticket-controls{left:13%;right:13%;top:75%}
+  .ticket-controls .ticket-action{font-size:9px}
+  .ticket-delete{font-size:8px}
+  .ticket-scene{height:min(43vh,360px);min-height:320px}
+  .ticket-folder{left:-2%}
+  .ticket-card{left:20%;width:min(25.5vh,213px);min-width:190px}
+  .ticket-scene:hover .ticket-card,.ticket-scene.is-open .ticket-card,.ticket-scene:focus-within .ticket-card{transform:translateX(45%) rotate(-2deg)}
+  .ticket-card:hover,.ticket-card:focus-visible{transform:translateX(45%) rotate(0deg) translateY(-6px)!important}
+}
+
+/* Keep the workbench dividers legible when the timeline is expanded. */
+.editor-page .timeline-heading::before,.editor-page .timeline-heading::after,
+.editor-page .canvas-bottom-bar::before,.editor-page .canvas-bottom-bar::after,
+.editor-page .timeline-resizer::after{content:none}
+.editor-page .canvas-bottom-bar{height:50px;align-items:flex-start;padding-top:7px;padding-bottom:7px;border-top:1px solid var(--color-border-faint)}
+.editor-page .canvas-bottom-bar.has-progress{height:62px}
+.editor-page .canvas-bottom-bar>span{min-height:35px}
+.editor-page .playback-dock{justify-content:flex-start;gap:5px}
+.editor-page .timeline-heading{border-bottom:1px solid var(--color-border-soft)}
+.editor-page .timeline-panel{border-top:1px solid var(--color-border-soft)}
+.timeline-navigator{position:relative;height:15px;min-height:15px;margin:8px 0 2px;background:#AA865619;border:1px solid var(--color-border-faint);cursor:crosshair;touch-action:none;user-select:none}
+.timeline-navigator-clip{position:absolute;top:4px;bottom:4px;background:#8F302Daa;pointer-events:none}
+.timeline-view-window{position:absolute;top:-3px;bottom:-3px;border:1px solid var(--color-border);background:#AA865630;cursor:grab;box-sizing:border-box}
+.timeline-view-window:active{cursor:grabbing}
+.timeline-view-window i{position:absolute;top:-1px;bottom:-1px;width:7px;background:var(--color-border);cursor:ew-resize;touch-action:none}
+.timeline-view-window i:first-child{left:-3px}.timeline-view-window i:last-child{right:-3px}
+.timeline-navigator:focus-visible{outline:1px solid var(--color-text);outline-offset:3px}
+.timeline-content{overflow-x:hidden}
+.timeline-scroll-arrow:disabled{opacity:.35;cursor:default}
+@media(min-width:801px){.editor-page .timeline-resizer{border-top:1px solid var(--color-border-faint)}}

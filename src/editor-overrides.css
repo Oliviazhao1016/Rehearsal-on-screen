@@ -1,0 +1,84 @@
+.editor-page{min-height:760px}
+.editor-header{height:66px;padding:0 22px}
+.editor-breadcrumb strong,.scene-name,.header-control,.mode-switch button{font-size:14px}
+.save-indicator{font-size:12px}
+.editor-main{grid-template-columns:240px minmax(0,1fr) 280px}
+.sidebar-header{height:60px;font-size:15px}
+.sidebar-section-title,.object-row,.inspector-title strong{font-size:14px}
+.object-row{min-height:42px}
+.object-row small,.sidebar-empty,.sidebar-foot{font-size:12px}
+.inspector-empty strong{font-size:16px}
+.inspector-empty p{font-size:14px}
+.inspector-content{padding:22px}
+.inspector-content .section-label,.inspector-content .field>span,.presence-row{font-size:13px}
+.inspector-marker,.coordinate-box strong{font-size:13px}
+.position-strip{height:94px}
+.position-strip-label{font-size:12px}
+.position-thumb{width:112px;height:72px}
+.position-thumb>button:first-child{font-size:12px}
+.position-thumb .preview-stage{width:83px;height:40px}
+.position-thumb span{max-width:100px}
+.new-position-wrap{height:70px}
+.new-position-button{width:72px;font-size:12px}
+.canvas-toolbar{height:58px;padding:0 18px}
+.canvas-subtitle,.canvas-tools button{font-size:13px}
+.canvas-tools{display:flex;gap:8px}
+.canvas-tools button{display:inline-flex;align-items:center;gap:6px;padding:7px 10px}
+.stage-shell{padding:1px 12px;align-items:stretch}
+.stage-outer{width:100%;max-width:none;height:calc(100% - 48px);min-height:0;padding:0}
+.stage-canvas{height:100%;min-height:0}
+.stage-canvas.grid-hidden{background-image:none}
+.stage-direction{height:24px;justify-content:center;font-size:14px}
+.stage-direction span{font-size:10px}
+.side-wing{width:7%}.left-wing{left:0}.right-wing{right:0}
+.stage-zone-label,.default-stage-mark span{font-size:13px}
+.stage-actor small{font-size:13px}
+.canvas-bottom-bar{font-size:13px}
+.next-button,.play-button{font-size:14px}
+
+.timeline-panel{height:275px;min-height:230px;display:flex;flex-direction:column}
+.timeline-panel.expanded{height:min(47vh,450px);min-height:340px}
+@media(min-width:801px){.editor-page:has(.timeline-panel.expanded){height:max(100vh,1050px);overflow:visible}}
+.timeline-heading{height:50px;padding:0 27px}
+.timeline-heading strong{font-size:15px}
+.timeline-heading span,.timeline-actions .text-button{font-size:13px}
+.timeline-content{flex:1;min-height:0;overflow:auto;position:relative;padding:0 30px 15px 145px}
+.timeline-ruler{height:33px;position:relative;cursor:pointer}
+.timeline-ruler span{top:8px;font-size:12px}
+.timeline-rail{position:relative}
+.track-name{left:-120px;height:50px;font-size:13px}
+.track-name.music-name{top:0}.track-name.position-name{top:50px}
+.music-track,.position-track{height:50px}
+.music-clip{top:8px;height:33px;font-size:12px}
+.music-clip span{font-size:12px}
+.track-empty{top:16px;font-size:12px}
+.transition-bar{top:10px;height:30px;font-size:12px;text-align:center;touch-action:none;min-width:18px}
+.transition-bar span:first-child{pointer-events:none}
+.transition-resize{position:absolute;right:0;top:0;bottom:0;width:12px;border-left:1px solid #ecc0d3aa;background:#fff2;cursor:ew-resize;touch-action:none}
+.transition-resize:hover{background:#f6bfda77}
+.timeline-position{top:9px;width:28px;height:32px;touch-action:none;cursor:ew-resize}
+.timeline-position.fixed{cursor:pointer}
+.timeline-position span{width:13px;height:13px}.timeline-position.active span{width:18px;height:18px}
+.timeline-hint{padding-top:16px;font-size:12px}
+.transition-details{border-top:1px solid #ffffff16;margin-top:9px;padding:7px 0 4px;max-height:none;height:auto;overflow:visible}
+.transition-detail-head{display:flex;justify-content:flex-start;gap:8px;align-items:center;padding:0 10px 8px 0;font-size:13px}
+.transition-detail-head .text-button{font-size:14px;font-weight:700;margin-right:auto}
+.transition-detail-head input{width:70px;min-height:30px;padding:4px 7px;background:#332d32;border:1px solid #7b5a6b;border-radius:5px;color:#eee;text-align:right}
+.movement-list{overflow-y:auto;max-height:calc(min(47vh,450px) - 210px);padding-bottom:12px}
+.movement-row{display:grid;grid-template-columns:130px minmax(190px,1fr) 110px 110px 105px;gap:12px;align-items:center;min-height:46px;padding:5px 10px 5px 0;border-top:1px solid #ffffff0d;font-size:13px;color:#e4d9df}
+.movement-object-name{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.movement-row label{display:flex;align-items:center;white-space:nowrap;font-size:12px;color:#c6bac0}
+.movement-row input{width:52px;min-height:27px;margin:0 3px;border:1px solid #755969;background:#332d32;color:#eee;padding:3px 5px;font-size:12px;border-radius:5px}
+.movement-mini-track{height:30px;border:1px solid #5d4b56;border-radius:5px;background:linear-gradient(90deg,#ffffff12 1px,transparent 1px),#302b30;background-size:10% 100%;position:relative;touch-action:none}
+.movement-bar{position:absolute;top:3px;bottom:3px;display:flex;align-items:center;justify-content:space-between;background:#96516f;border:1px solid #d889ac;border-radius:4px;min-width:12px;cursor:grab;touch-action:none}
+.movement-bar:hover{background:#ae5e83}
+.movement-bar>span{font-size:12px;color:#fff3f8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+.movement-bar i{width:10px;height:100%;flex:none;background:#f3c1d544;cursor:ew-resize;touch-action:none}
+.movement-bar i:first-child{border-right:1px solid #f1d2e0aa}.movement-bar i:last-child{border-left:1px solid #f1d2e0aa}
+.movement-draw{background:#3b3038;border:1px solid #936481;border-radius:5px;color:#f3d8e4;padding:6px 7px;white-space:nowrap;font-size:12px}
+.movement-draw:hover{background:#624058}
+
+@media(max-width:1150px){.editor-main{grid-template-columns:190px minmax(0,1fr) 225px}.movement-row{grid-template-columns:105px minmax(150px,1fr) 95px 95px 94px;gap:7px}.timeline-content{padding-left:125px}.track-name{left:-105px}}
+@media(max-width:800px){.editor-main{grid-template-columns:165px minmax(0,1fr)}.timeline-panel{height:260px}.timeline-panel.expanded{height:420px}.timeline-content{min-width:0;overflow:auto}.timeline-rail,.timeline-ruler,.transition-details{min-width:760px}.stage-shell{padding:1px 6px}.canvas-tools button{font-size:11px}}
+@media(max-width:560px){.editor-main{grid-template-columns:105px minmax(0,1fr)}.canvas-toolbar{padding:0 7px}.canvas-tools button{font-size:0;gap:0}.canvas-tools svg{width:18px}.stage-actor small{font-size:9px}.timeline-heading span{display:none}.timeline-content{padding-left:95px}.track-name{left:-82px}}
+@media(prefers-reduced-motion:reduce){.timeline-panel{transition:none}}

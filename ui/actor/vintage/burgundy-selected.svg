@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="burgundy actor marker">
+  <circle cx="32" cy="32" r="29" fill="#171513" stroke="#E8D8BC" stroke-width="3"/>
+  <circle cx="32" cy="32" r="24" fill="#8F302D" stroke="#D4AF37" stroke-width="1.5"/>
+  <circle cx="32" cy="32" r="19" fill="none" stroke="#E8D8BC" stroke-opacity=".48" stroke-width="1"/>
+  <path d="M32 5v7M32 52v7M5 32h7M52 32h7" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  <path d="M32 13l2.3 2.3L32 17.6l-2.3-2.3zM32 46.4l2.3 2.3L32 51l-2.3-2.3z" fill="#E8D8BC" fill-opacity=".85"/>
+  <circle cx="32" cy="32" r="31" fill="none" stroke="#D4AF37" stroke-width="1"/>
+</svg>

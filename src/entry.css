@@ -1,0 +1,56 @@
+.curtain-entry,.guidebook-page,.play-library{min-height:100vh;position:relative;overflow:hidden;background:#17110f;color:#f6eadb}
+.curtain-entry{height:100vh;display:block}
+.curtain-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.phase-landing .curtain-media{filter:brightness(.15)}
+.curtain-dimmer{position:absolute;inset:0;background:linear-gradient(90deg,#0c0909a6 0%,transparent 72%);pointer-events:none}
+.curtain-landing{position:absolute;left:8%;top:14%;max-width:680px}
+.curtain-eyebrow{display:block;color:#d2a16c;font-size:13px;letter-spacing:.24em;margin-bottom:25px}
+.curtain-landing h1,.guidebook-content h1{font-family:Georgia,'Noto Serif SC',serif;font-weight:400;font-size:clamp(44px,5vw,83px);line-height:1.09;letter-spacing:-.045em;text-shadow:0 6px 24px #000b;margin:0}
+.curtain-actions{display:flex;gap:15px;margin-top:38px}
+.curtain-actions button,.guidebook-cta{font-size:16px;border-radius:5px;padding:15px 22px;min-height:52px}
+.curtain-primary,.guidebook-cta{display:inline-flex;align-items:center;gap:20px;background:#ae744c;color:#fff3e7;border:1px solid #d5a879;font-weight:700}
+.curtain-primary:hover,.guidebook-cta:hover{background:#c28a5e}
+.curtain-secondary{background:#1a1213c4;border:1px solid #d3b395;color:#f2d9bf}
+.curtain-secondary:hover{background:#3e2827}
+.guidebook-page{background:radial-gradient(circle at 80% 10%,#5e2b25,#211613 55%,#120d0e)}
+.guidebook-back{display:inline-flex;align-items:center;gap:9px;margin:30px 0 0 7%;color:#ebd8c5;background:none;border:0;font-size:15px}
+.guidebook-content{max-width:1100px;margin:8vh auto 0;padding:0 30px 60px}
+.guidebook-kicker{font-size:13px;letter-spacing:.24em;color:#d1a575}
+.guidebook-content h1{font-size:clamp(43px,5vw,70px);margin:18px 0 50px}
+.guidebook-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.guidebook-steps article{border-top:1px solid #ac7f62;padding-top:18px}
+.guidebook-steps article span{font-size:15px;color:#cc9d78}
+.guidebook-steps h2{font-family:Georgia,serif;font-size:23px;font-weight:400;margin:20px 0 11px}
+.guidebook-steps p{color:#b6a49b;font-size:15px;line-height:1.7}
+.guidebook-cta{margin-top:35px}
+
+.play-library{background:radial-gradient(ellipse at 34% 42%,#4a2521 0%,#241614 54%,#100d0d 100%);min-height:100vh;overflow:auto}
+.play-library:before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.16;background-image:repeating-linear-gradient(90deg,transparent 0 79px,#c58b6210 80px),repeating-linear-gradient(0deg,transparent 0 79px,#c58b6210 80px)}
+.play-library-header{position:relative;display:flex;align-items:flex-end;justify-content:space-between;margin:0 auto;max-width:1390px;padding:55px 7% 15px;border-bottom:1px solid #b18b6a55}
+.play-library-kicker{font-size:12px;color:#ca9f7e;letter-spacing:.19em}
+.play-library-header h1{font-family:Georgia,serif;font-size:clamp(52px,5.8vw,85px);font-weight:400;line-height:1;margin:14px 0 0;color:#f4e5d1}
+.play-count{font-family:Georgia,serif;font-size:18px;color:#c9aa91;margin-bottom:8px}
+.ticket-shelf{position:relative;max-width:1500px;overflow-x:auto;margin:30px auto 0;padding:0 6% 20px;scrollbar-color:#784b40 transparent}
+.ticket-scene{height:490px;position:relative;width:fit-content;margin-inline:auto}
+.ticket-stack{position:absolute;left:115px;top:29px;inset-block-end:0;width:270px}
+.ticket-card{position:absolute;top:12px;left:17px;width:242px;height:360px;border:0;background:none;padding:0;text-align:left;transform-origin:20% 80%;transform:translateX(calc(var(--ticket-index) * 7px)) rotate(calc(var(--ticket-index) * 1deg));transition:transform .56s cubic-bezier(.2,.75,.18,1),filter .35s;filter:brightness(.88);cursor:pointer}
+.ticket-scene:hover .ticket-card,.ticket-scene.is-open .ticket-card,.ticket-scene:focus-within .ticket-card{transform:translateX(calc(150px + var(--ticket-index) * 205px)) rotate(-2deg);filter:brightness(1)}
+.ticket-card:hover,.ticket-card:focus-visible{transform:translateX(calc(150px + var(--ticket-index) * 205px)) rotate(0deg) translateY(-12px)!important;filter:brightness(1.08)!important}
+.ticket-card>img,.ticket-folder>img{width:100%;height:100%;object-fit:fill;pointer-events:none}
+.ticket-content{position:absolute;left:18%;right:18%;top:8%;bottom:13%;display:flex;flex-direction:column;align-items:center;text-align:center;color:#5b2924;pointer-events:none}
+.ticket-overline{font-size:10px;letter-spacing:.1em;color:#924d3e;margin-bottom:16px;white-space:nowrap}
+.ticket-content strong{font-family:Georgia,'Noto Serif SC',serif;font-size:clamp(17px,1.8vw,24px);line-height:1.15;max-height:3.45em;overflow:hidden;word-break:break-word}
+.ticket-preview{position:relative;width:82%;height:66px;border:1px solid #9d5d49;border-radius:2px;background:#f1dfc6;margin:16px 0 12px}
+.ticket-preview:after{content:'AUDIENCE';position:absolute;bottom:1px;left:50%;transform:translateX(-50%);font-size:6px;letter-spacing:.08em;color:#9d5d49}
+.ticket-actor{position:absolute;width:6px;height:6px;border-radius:50%;background:#c13769;transform:translate(-50%,-50%)}
+.ticket-actor.blue{background:#2584cd}.ticket-actor.yellow{background:#d6a813}
+.ticket-detail{font-size:13px;line-height:1.55;color:#7c4338}
+.ticket-action{display:inline-flex;align-items:center;gap:5px;margin-top:auto;font-size:11px;font-weight:700;white-space:nowrap}
+.ticket-plus{width:74px;height:74px;border:2px solid #a46c58;border-radius:50%;display:grid;place-items:center;margin:38px 0 21px}
+.ticket-card.blank .ticket-plus{width:62px;height:62px;margin:15px 0 13px}
+.ticket-card.blank .ticket-detail{margin-top:6px;font-size:11px;line-height:1.3}
+.ticket-folder{position:absolute;z-index:20;left:70px;top:0;width:290px;height:435px;border:0;background:none;padding:0;filter:drop-shadow(14px 13px 16px #0604049e)}
+.ticket-help{position:relative;text-align:center;color:#c2a692;font-size:14px;margin:0 20px 45px}
+
+@media(max-width:760px){.curtain-landing{left:7%;right:6%;top:17%}.curtain-actions{flex-direction:column;align-items:flex-start}.curtain-actions button{min-width:210px}.guidebook-steps{grid-template-columns:repeat(2,1fr)}.play-library-header{padding:35px 6% 15px}.ticket-shelf{padding:0 15px 15px}.ticket-scene{height:455px}.ticket-folder{left:8px;width:260px;height:405px}.ticket-stack{left:50px}.ticket-card{width:220px;height:330px}.ticket-scene:hover .ticket-card,.ticket-scene.is-open .ticket-card,.ticket-scene:focus-within .ticket-card{transform:translateX(calc(105px + var(--ticket-index) * 185px)) rotate(-2deg)}.ticket-card:hover,.ticket-card:focus-visible{transform:translateX(calc(105px + var(--ticket-index) * 185px)) rotate(0) translateY(-12px)!important}}
+@media(prefers-reduced-motion:reduce){.ticket-card{transition:none}.curtain-media{animation:none}}

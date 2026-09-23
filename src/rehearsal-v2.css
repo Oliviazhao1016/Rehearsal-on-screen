@@ -1,0 +1,125 @@
+/* The stage keeps its real width/depth ratio and determines the editor height. */
+.editor-page{height:auto;min-height:100vh;overflow:visible}
+.editor-main{position:relative;flex:none;height:auto;min-height:0;grid-template-columns:240px minmax(0,1fr) 280px}
+.editor-main.left-collapsed{grid-template-columns:52px minmax(0,1fr) 280px}
+.editor-main.right-collapsed{grid-template-columns:240px minmax(0,1fr) 52px}
+.editor-main.left-collapsed.right-collapsed{grid-template-columns:52px minmax(0,1fr) 52px}
+.stage-workspace{min-height:0}
+.stage-shell{flex:none;min-height:0;width:100%;padding:8px 45px 12px;justify-content:flex-start}
+.stage-outer{width:min(100%,1050px);height:auto;min-height:0;max-height:none;max-width:none;padding:0;flex:none;position:relative}
+.stage-canvas{height:100%;min-height:0}
+.stage-direction{flex:none}
+.side-wing{width:7%}.left-wing{left:0}.right-wing{right:0}
+.canvas-bottom-bar{height:78px;flex:none}
+
+.panel-collapse-button,.timeline-toggle{display:inline-grid;place-items:center;flex:none;width:30px;height:30px;border:1px solid transparent;border-radius:6px;background:transparent;color:#b9adb4;padding:0}
+.panel-collapse-button:hover,.timeline-toggle:hover{color:#fff;border-color:#755466;background:#46343e}
+.object-sidebar.panel-is-collapsed,.inspector.panel-is-collapsed{overflow:hidden}
+.panel-is-collapsed .sidebar-header{height:60px;padding:10px 0;flex-direction:column;gap:2px;justify-content:center}
+.panel-is-collapsed .sidebar-header>span{font-size:9px;letter-spacing:0;white-space:nowrap}
+.object-row{gap:5px;padding:5px 6px;min-height:42px}
+.object-row img{width:27px;height:27px;flex:none}
+.object-row .prop-glyph{flex:none}
+.object-select{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left;border:0;background:none;color:inherit;padding:0;font-size:13px}
+.object-row small{margin-left:0;flex:none;font-size:10px}
+.object-row-action{flex:none;display:grid;place-items:center;width:22px;height:24px;padding:0;border:0;border-radius:4px;background:transparent;color:#9b8992}
+.object-row-action:hover{background:#ffffff17;color:#eee}
+.object-row-action.danger:hover{color:#ff9ea9;background:#753d4b}
+.object-rename{flex:1;min-width:0;height:28px;border:1px solid #cf85a5;border-radius:4px;background:#2b2529;color:#fff;padding:3px 5px;font-size:13px}
+.add-prop-menu .add-prop-options{display:grid}
+.inspector{position:relative}
+.inspector-corner-help{position:absolute;right:18px;top:22px;color:#a79ba1;pointer-events:none}
+.inspector-help{font-size:13px;line-height:1.6;color:#a89ba2}
+
+.stage-ruler{position:absolute;top:0;bottom:0;width:30px;z-index:3;color:#bfaab4;cursor:crosshair}
+.stage-ruler.left{left:-34px}.stage-ruler.right{right:-34px}
+.stage-ruler:before{content:'';position:absolute;top:0;bottom:0;left:50%;border-left:1px solid #9f7185}
+.stage-ruler>span{position:absolute;left:0;right:0;display:flex;align-items:center;height:1px;pointer-events:none}
+.stage-ruler>span i{display:block;width:9px;height:1px;background:#a37b8e}
+.stage-ruler>span.major i{width:16px;background:#d496b1}
+.stage-ruler>span em{position:absolute;font-style:normal;font-size:10px;color:#c0a3b0}
+.stage-ruler.left>span{justify-content:flex-end}.stage-ruler.left>span em{right:20px}
+.stage-ruler.right>span{justify-content:flex-start}.stage-ruler.right>span em{left:20px}
+.stage-ruler.right>span i{order:0}
+.stage-hover-v,.stage-hover-h{position:absolute;z-index:7;pointer-events:none}
+.stage-hover-v{top:0;bottom:0;border-left:1px dashed #e8c79a99}
+.stage-hover-h{left:0;right:0;border-top:1px dashed #e8c79a99}
+.stage-coordinate-tooltip{position:absolute;z-index:9;transform:translate(13px,13px);pointer-events:none;white-space:nowrap;border:1px solid #cfb494;background:#251d21e8;border-radius:5px;color:#f7e7d0;padding:5px 8px;font-size:12px;font-variant-numeric:tabular-nums;box-shadow:0 6px 18px #0008}
+.curve-preview{fill:none;stroke:#ffd78a;stroke-width:2;stroke-dasharray:8 6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.curve-guide{stroke:#edc9939a;stroke-width:1;stroke-dasharray:4 5;vector-effect:non-scaling-stroke}
+.curve-endpoint{position:absolute;z-index:7;width:12px;height:12px;border-radius:50%;background:#ffe0a3;border:2px solid #553d37;transform:translate(-50%,-50%);pointer-events:none}
+.curve-handle{position:absolute;z-index:8;display:grid;place-items:center;width:25px;height:25px;border-radius:50%;border:2px solid #fff0c9;background:#ad704d;color:#fff;font-size:11px;font-weight:700;transform:translate(-50%,-50%);touch-action:none;cursor:grab;box-shadow:0 3px 12px #0008}
+.curve-handle:active{cursor:grabbing}
+
+.canvas-bottom-bar>span{display:flex;align-items:center;white-space:nowrap}
+.canvas-bottom-bar>span small{font-size:11px;color:#8f858b;margin-left:12px}
+.playback-dock{display:flex;flex-direction:column;align-items:stretch;justify-content:center;width:218px;min-width:218px;gap:8px}
+.playback-controls{display:flex;justify-content:flex-end;min-height:35px}
+.next-button,.play-button{justify-content:center;min-width:112px;height:35px}
+.preview-controls{justify-content:flex-end}
+.playback-progress{height:5px;width:100%;border-radius:99px;background:#55424d;overflow:hidden}
+.playback-progress>span{display:block;height:100%;border-radius:99px;background:#ed91b4;transition:width .1s linear}
+
+.timeline-panel.collapsed{height:52px;min-height:52px}
+.timeline-panel.collapsed .timeline-heading{height:51px;border-bottom:0}
+.timeline-toggle{margin-right:5px}
+.timeline-heading>div:first-child{align-items:center}
+.movement-empty{padding:15px 5px;color:#afa2aa;font-size:13px}
+
+@media(max-width:1100px){
+  .editor-main{grid-template-columns:190px minmax(0,1fr) 225px}
+  .editor-main.left-collapsed{grid-template-columns:52px minmax(0,1fr) 225px}
+  .editor-main.right-collapsed{grid-template-columns:190px minmax(0,1fr) 52px}
+  .editor-main.left-collapsed.right-collapsed{grid-template-columns:52px minmax(0,1fr) 52px}
+  .stage-shell{padding-left:38px;padding-right:38px}
+  .object-row small{display:none}
+}
+@media(max-width:800px){
+  .editor-page{min-height:100vh}
+  .editor-main,.editor-main.left-collapsed,.editor-main.right-collapsed,.editor-main.left-collapsed.right-collapsed{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;height:auto;min-height:0}
+  .object-sidebar,.inspector{position:relative;display:block;height:auto;grid-row:1}
+  .object-sidebar{grid-column:1}.stage-workspace{grid-column:2;grid-row:1}.inspector{grid-column:3}
+  .object-sidebar:not(.panel-is-collapsed),.inspector:not(.panel-is-collapsed){position:absolute;top:0;bottom:0;z-index:15;width:220px;box-shadow:0 12px 35px #000a}
+  .object-sidebar:not(.panel-is-collapsed){left:0}.inspector:not(.panel-is-collapsed){right:0}
+  .stage-shell{padding-left:33px;padding-right:33px}
+  .timeline-panel.expanded{height:420px}
+}
+@media(max-width:560px){.canvas-bottom-bar>span small{display:none}.playback-dock{width:160px;min-width:160px}.stage-shell{padding-left:24px;padding-right:24px}.stage-ruler.left{left:-24px}.stage-ruler.right{right:-24px}.stage-ruler{width:20px}.stage-ruler>span em{display:none}}
+
+/* Editing chrome: compact position strip, visible navigation, hidden native bars. */
+.position-strip{position:relative;height:104px;gap:8px;overflow:visible}
+.position-menu.strip-menu{position:absolute;z-index:30;top:86px;right:64px;left:auto;width:158px}
+.position-thumbs{height:84px;min-height:84px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain}
+.position-thumbs::-webkit-scrollbar,.timeline-content::-webkit-scrollbar,.movement-list::-webkit-scrollbar,.object-sidebar::-webkit-scrollbar,.inspector::-webkit-scrollbar{display:none}
+.position-thumb{height:76px;cursor:grab;touch-action:pan-x}
+.position-thumb:active{cursor:grabbing}
+.position-thumb.drag-target{border-color:#f7c7db;box-shadow:0 0 0 2px #e88db74d}
+.strip-scroll-arrow,.timeline-scroll-arrow{flex:none;display:grid;place-items:center;width:28px;height:35px;padding:0;border:1px solid #81566e;border-radius:6px;background:#48313f;color:#ffd6e8;cursor:pointer}
+.strip-scroll-arrow:hover,.timeline-scroll-arrow:hover{background:#74445d;color:#fff}
+.timeline-actions{display:flex;align-items:center;gap:7px}
+.timeline-scroll-arrow{width:28px;height:29px}
+.timeline-content,.movement-list,.object-sidebar,.inspector{scrollbar-width:none}
+.timeline-content{overflow:auto}
+.movement-list{overflow-y:auto}
+.object-row-action.visibility.on{color:#f5bdd3}
+.object-row-action.visibility:not(.on){color:#71666c}
+
+/* Path tools sit on the stage, separate from grid and Stage Mark switches. */
+.path-toolbox{align-self:flex-start;display:flex;align-items:center;gap:6px;max-width:100%;margin:0 0 6px;padding:6px 8px;border:1px solid #97704f;border-radius:8px;background:#302922;box-shadow:0 6px 20px #0005;color:#f2d4b0;z-index:10}
+.path-toolbox>span{white-space:nowrap;font-size:12px;font-weight:700;margin:0 6px}
+.path-toolbox button{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;min-height:28px;padding:4px 8px;border:1px solid #846850;border-radius:5px;background:#44362c;color:#ead2b3;font-size:12px}
+.path-toolbox button.active,.path-toolbox button:hover{border-color:#ffd090;background:#765437;color:#fff}
+.path-toolbox button:last-child{margin-left:8px;background:#825c3c;color:#fff}
+.stage-path-overlay{pointer-events:none}
+.path-hitline{fill:none;stroke:transparent;stroke-width:16;vector-effect:non-scaling-stroke;pointer-events:stroke}
+.path-hitline.corner,.path-hitline.smooth{cursor:crosshair}
+.path-hitline.select{pointer-events:none}
+.path-anchor{position:absolute;z-index:9;display:grid;place-items:center;width:22px;height:22px;padding:0;transform:translate(-50%,-50%);border:2px solid #fff1ce;background:#a26d43;color:#fff;font-size:10px;font-weight:700;touch-action:none;cursor:grab;box-shadow:0 3px 10px #0009}
+.path-anchor.corner{border-radius:4px}
+.path-anchor.smooth{border-radius:50%}
+.path-anchor:active,.curve-handle:active{cursor:grabbing}
+.curve-handle{width:15px;height:15px;font-size:0;background:#d9ab75}
+.stage-exit-overlay{position:absolute;z-index:12;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:14px;background:#b9b9ba9c;backdrop-filter:blur(2px);pointer-events:none;color:#222126;text-align:center}
+.stage-exit-overlay span{font-size:22px;font-weight:800}
+.stage-exit-overlay small{font-size:12px;font-weight:600}
+@media(max-width:800px){.path-toolbox{flex-wrap:wrap}.path-toolbox button{font-size:11px}.position-strip-label{display:none}}

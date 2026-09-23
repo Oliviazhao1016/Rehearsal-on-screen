@@ -1,0 +1,16 @@
+import { createRoot } from 'react-dom/client'
+import '@fontsource/oswald/latin-300.css'
+import '@fontsource/oswald/latin-400.css'
+import '@fontsource/oswald/latin-500.css'
+import '@fontsource/oswald/latin-600.css'
+import '@fontsource/oswald/latin-700.css'
+import '@fontsource/limelight/latin-400.css'
+import App from './App'
+import './styles.css'
+import './entry.css'
+import './editor-overrides.css'
+import './rehearsal-v2.css'
+import './theatre-theme.css'
+import './refinement.css'
+
+createRoot(document.getElementById('root')!).render(<App />)
